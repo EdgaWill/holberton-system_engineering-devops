@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Show list directory, show format 
+for doc in $(find . -maxdepth 1 | cut -d / -f2 | cut -d - -f2)
+do
+	if [[ $doc =~ [a-zA-Z]|[0-9] ]]
+	then
+		echo "$doc"
+	fi
+done
