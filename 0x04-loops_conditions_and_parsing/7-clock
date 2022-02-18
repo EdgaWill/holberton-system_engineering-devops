@@ -1,9 +1,18 @@
 #!/usr/bin/env bash
 # Show list directory, show format 
-for doc in $(find . -maxdepth 1 | cut -d / -f2 | cut -d - -f2)
+# display hours from 0 to 12
+# display minutes from 1 to 59
+a=0
+e=1
+while [ $a -le 12 ]
 do
-	if [[ $doc =~ [a-zA-Z]|[0-9] ]]
-	then
-		echo "$doc"
-	fi
+	echo "Hour: $a"
+	while [ $e -le 59 ]
+	do
+		echo $e
+		((e++))
+	done
+	((a++))
+	((e=1))
 done
+
